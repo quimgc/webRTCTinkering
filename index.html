@@ -2,24 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Webcam</title>
+    <title>Index</title>
 </head>
 <body>
-<video autoplay></video>
 
-<script>
-  const constraints = {
-    video: true
-  };
-  const video = document.querySelector('video');
-  function handleSuccess(stream) {
-    video.srcObject = stream;
-  }
-  function handleError(error) {
-    console.error('Reeeejected!', error);
-  }
-  navigator.mediaDevices.getUserMedia(constraints).
-  then(handleSuccess).catch(handleError);
-</script>
+<ul>
+    
+    <li><a href="https://quimgc.github.io/webRTCTinkering/">Prova 1</a></li>
+    <li></li>
+</ul>
 </body>
 </html>
