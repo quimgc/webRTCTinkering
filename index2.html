@@ -5,12 +5,12 @@
     <title>Index 2 html</title>
 </head>
 <body>
+
 <video autoplay id="screenshot-video"></video>
 <img src="" id="screenshot-img">
 <canvas style="display:none;"></canvas>
-
-
 <button id="screenshot-button"> Take a Screenshot</button>
+
 <script>
   const button = document.querySelector('#screenshot-button');
   const img = document.querySelector('#screenshot-img');
@@ -26,10 +26,6 @@
     img.src = canvas.toDataURL('image/webp');
   };
 
-  const constraints = {
-    video: true
-  };
-
   function handleSuccess(stream) {
     video.srcObject = stream;
   }
@@ -37,6 +33,11 @@
   function handleError(error) {
     console.error('Reeeejected!', error);
   }
+
+  const constraints = {
+    video: true
+  };
+
 
   navigator.mediaDevices.getUserMedia(constraints).
   then(handleSuccess).catch(handleError);
