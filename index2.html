@@ -9,6 +9,8 @@
 <img src="">
 <canvas style="display:none;"></canvas>
 
+
+<button id="screenshot-button"> Take a Screenshot</button>
 <script>
   const button = document.querySelector('#screenshot-button');
   const img = document.querySelector('#screenshot-img');
@@ -24,8 +26,16 @@
     img.src = canvas.toDataURL('image/webp');
   };
 
+  const constraints = {
+    video: true
+  };
+
   function handleSuccess(stream) {
     video.srcObject = stream;
+  }
+
+  function handleError(error) {
+    console.error('Reeeejected!', error);
   }
 
   navigator.mediaDevices.getUserMedia(constraints).
